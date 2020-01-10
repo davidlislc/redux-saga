@@ -9,9 +9,7 @@ export class Post extends Component {
   render() {
     return (
       <ul>
-        {this.props.articles.map(el => (
-          <li key={el.id}>{el.title}</li>
-        ))}
+        {this.props.articles}
       </ul>
     );
   }
@@ -20,7 +18,7 @@ export class Post extends Component {
 function mapStateToProps(state) {
   console.log(state.remoteArticles);
   return {
-    articles: state.remoteArticles.slice(0, 10)
+    articles: state.remoteArticles
   };
 }
 
